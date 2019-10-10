@@ -1,0 +1,56 @@
+{
+    "name": "equeue",
+    "version": "1.0.0",
+    "description": "equeue",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "test"
+    },
+    "scripts": {
+        "test": "mocha test/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/shasharoman/equeue.git"
+    },
+    "keywords": [
+        "execution",
+        "queue"
+    ],
+    "author": "shasharoman@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/shasharoman/equeue/issues"
+    },
+    "homepage": "https://github.com/shasharoman/equeue#readme",
+    "dependencies": {
+        "debug": "4.1.1",
+        "lodash": "4.17.15",
+        "uuid": "3.3.3"
+    },
+    "devDependencies": {
+        "chai": "4.2.0",
+        "eslint": "6.5.0",
+        "husky": "3.0.7",
+        "js-beautify": "1.10.2",
+        "lint-staged": "9.4.0",
+        "mocha": "6.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "js-beautify --config ./.editorconfig -r -f",
+            "eslint --fix",
+            "git add"
+        ],
+        "*.json": [
+            "js-beautify --config ./.editorconfig -r -f",
+            "git add"
+        ]
+    }
+}
